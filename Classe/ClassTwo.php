@@ -40,15 +40,15 @@ class ClassTwo
         $getSetEtc = strtolower(substr($val,0, 3));
         $ifProperty = ucwords(substr($val,3));
         $arguments = implode(',', $arg);
-        if($getSetEtc === 'get'){
+        if($getSetEtc != '' && $getSetEtc === 'get'){
             return $this->data[$ifProperty];
-            } else if($getSetEtc === 'set') {
+            } else if($getSetEtc != '' && $getSetEtc === 'set') {
             return $this->data[$ifProperty] = $arguments ?? null;
-        } else if ($getSetEtc === 'has') {
+        } else if ($getSetEtc != '' &&$getSetEtc === 'has') {
             if(isset ($this->data[$ifProperty])){
                 return $this->data[$ifProperty] ? 'true' : 'false';
             }
-        } else if ($getSetEtc === 'uns') {
+        } else if ($getSetEtc != '' &&$getSetEtc === 'uns') {
             unset($this->data[$ifProperty]);
         } else {
             throw new \Exception("You need to use get, set, has or uns");
