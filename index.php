@@ -14,19 +14,19 @@ use Classe\ClassTwo;
 # ClassOne
 
 $first = new ClassOne();
-$first->private1 = 'Private obj1';
-$first->get = ['try' => 'access'];
-$first->private2 = 'Private obj2';
+$first->city = 'Zagreb';
+$first->postal = 10000;
+
+echo $first->city . '<br>';
+echo $first->postal . '<br>';
 
 
-var_dump($first->private1);
-var_dump($first->private2);
-var_dump($first->get);
 
+echo "<br> <hr> <br>";
 
 # ClassTwo
-
 $second = new ClassTwo();
+# Check
 # Set
 //$planet = $second->data['mass'] = 22;
 # Unset
@@ -34,15 +34,18 @@ $second = new ClassTwo();
 # Isset
 //echo isset($second->data) ? 'true' : 'false';
 //var_dump($second->data);
-echo "<br>";
-
-
-echo $second->hasMass('fdsfds');
 
 try {
-
-    $second->setPlanet('3232');
-    echo $second->getPlanet();
+    var_dump($second->data);
+    $second->SETplanet('Donald Trump');
+    $second->setVolume(123456789);
+    echo 'Planet  ' . $second->getPlanet() . "<br>";
+    echo 'Volume ' . $second->getVolume() . "<br>";
+    echo 'Has ' . $second->hasMass() . "<br>";
+    $second->unsPlanet();
+    $second->unsMass();
+    $second->unsVolume();
+    var_dump($second->data) . "<br>";
 } catch (Exception $e) {
     echo $e->getMessage();
 }
