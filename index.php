@@ -37,15 +37,18 @@ $second = new ClassTwo();
 
 try {
     var_dump($second->data);
-    $second->SETplanet('Donald Trump');
+
+    $second->setPlanet('Donald Trump');
     $second->setVolume(123456789);
     echo 'Planet  ' . $second->getPlanet() . "<br>";
     echo 'Volume ' . $second->getVolume() . "<br>";
     echo 'Has ' . $second->hasMass() . "<br>";
+
     $second->unsPlanet();
     $second->unsMass();
     $second->unsVolume();
     var_dump($second->data) . "<br>";
+
 } catch (Exception $e) {
     echo $e->getMessage();
 }
